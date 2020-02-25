@@ -44,10 +44,9 @@ def xmllist(request):
 
     ##### loop each file name to create urls and running them through the parser.
     for xmlFileName in xmlFileNames:
-        # xmlurl = ("https://raw.githubusercontent.com/IATI/IATI-Codelists/version-2.03/xml/" + ''.join(xmlFileName))
+        xmlurl = ("https://raw.githubusercontent.com/IATI/IATI-Codelists/version-2.03/xml/" + ''.join(xmlFileName))
 
-        testurl = (
-            "https://raw.githubusercontent.com/IATI/IATI-Codelists/version-2.03/xml/DocumentCategory.xml")
+        # testurl = ("https://raw.githubusercontent.com/IATI/IATI-Codelists/version-2.03/xml/DocumentCategory.xml")
 
         # response = requests.get(xmlurl)
         response = requests.get(testurl)
@@ -56,8 +55,6 @@ def xmllist(request):
         metaData = root.find("./metadata")
         codeListName = metaData.findtext("./name/narrative")
         codeListDesc = metaData.findtext("./description/narrative")
-        # print('code list name: ', codeListName)
-        # print('code list description: ', codeListDesc)
 
         codeListItems = root.find("./codelist-items")
         codeListItem = codeListItems.find("./codelist-item")

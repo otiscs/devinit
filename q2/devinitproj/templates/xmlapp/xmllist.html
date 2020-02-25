@@ -5,17 +5,14 @@
   <div class="card-body">
       <h1>Welcome to this xml displaying app</h1>
 
-<table>
-<tr>
-  <th>header 1</th>
-  <th>header 2</th>
-</tr>
-<tr>
-  <td>test cell 1</td>
-  <td>test cell 2</td>
-</tr>
-</table>
+      <table style="width:100%" class="table table-responsive">
 
+          {% for item in xmlObj %}
+          <tr>
+              <td>{{ item['codeListName'] }} </td>
+          </tr>
+          {% endfor %}
+    </table>
   </div>
 </div>
 
