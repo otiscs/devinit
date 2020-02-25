@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 class="text-center mb-3">XML lists</h1>
+<div class="card text-center">
+    <div class="card-body">
+        <h1>Welcome to this xml displaying app</h1>
+
+        <table style="width:100%" class="table table-responsive">
+
+            {% for item in xmlObj %}
+            <tr>
+                <td>{{ item['codeListName'] }} </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+</div>
+
+{% endblock %}
